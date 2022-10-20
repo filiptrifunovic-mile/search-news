@@ -31,7 +31,6 @@ const AppProvider = ({ children }) => {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data);
 
       dispatch({
         type: SET_STORIES,
@@ -42,7 +41,7 @@ const AppProvider = ({ children }) => {
     }
   }
 
-  function removerStory(id) {
+  function removeStory(id) {
     dispatch({ type: REMOVE_STORY, payload: id });
   }
 
@@ -62,7 +61,9 @@ const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         ...state,
-        removerStory,
+        removeStory,
+        handleSearch,
+        handlePage,
       }}
     >
       {children}
