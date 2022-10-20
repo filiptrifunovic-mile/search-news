@@ -3,7 +3,13 @@ import Stories from "./Stories.js";
 import Buttons from "./Buttons.js";
 
 function App() {
-  return <h2>News</h2>;
+  return (
+    <>
+      <SearchForm />
+      <Buttons />
+      <Stories />
+    </>
+  );
 }
 
 export default App;
