@@ -8,7 +8,7 @@ const Stories = () => {
   if (isLoading) return <div className="loading"></div>;
 
   return (
-    <section>
+    <section className="stories">
       {hits.map((item) => {
         const { objectID, title, num_comments, url, points, author } = item;
         return (

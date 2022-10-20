@@ -31,7 +31,7 @@ const reducer = (state, action) => {
     return { ...state, query: action.payload, page: 0 };
   }
 
-  if (action.page === HANDLE_PAGE) {
+  if (action.type === HANDLE_PAGE) {
     if (action.payload === "inc") {
       let nextPage = state.page + 1;
       if (nextPage > state.nbPages - 1) {
