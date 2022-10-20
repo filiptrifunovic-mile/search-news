@@ -42,6 +42,18 @@ const AppProvider = ({ children }) => {
     }
   }
 
+  function removerStory(id) {
+    dispatch({ type: REMOVE_STORY, payload: id });
+  }
+
+  function handleSearch(query) {
+    dispatch({ type: HANDLE_SEARCH, payload: query });
+  }
+
+  function handlePage(value) {
+    dispatch({ type: HANDLE_PAGE, payload: value });
+  }
+
   useEffect(() => {
     getStories(`${API_ENDPOINT}query=${state.query}&page=${state.page}`);
   }, [state.query, state.page]);
@@ -50,6 +62,7 @@ const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         ...state,
+        removerStory,
       }}
     >
       {children}
